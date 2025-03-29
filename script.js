@@ -1,14 +1,14 @@
 function isSameType(value1, value2) {
-  // Convert numeric strings to numbers
-  if (!isNaN(value1)) value1 = Number(value1);
-  if (!isNaN(value2)) value2 = Number(value2);
+  // Convert to numbers if possible
+  let num1 = Number(value1);
+  let num2 = Number(value2);
 
-  // Check if both values are NaN
-  if (Number.isNaN(value1) && Number.isNaN(value2)) {
+  // Check if both are NaN
+  if (Number.isNaN(num1) && Number.isNaN(num2)) {
     return true;
   }
 
-  // Compare types
+  // Compare actual types
   return typeof value1 === typeof value2;
 }
 
